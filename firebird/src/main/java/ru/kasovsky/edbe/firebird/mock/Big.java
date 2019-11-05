@@ -1,8 +1,8 @@
-package ru.kasovsky.edbe.derby.mock;
+package ru.kasovsky.edbe.firebird.mock;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import ru.kasovsky.edbe.derby.dto.SmallCreateDto;
+import ru.kasovsky.edbe.firebird.dto.SmallCreateDto;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,10 +35,10 @@ public class Big {
         List<SmallCreateDto> list = new ArrayList<>();
         for (int i = 0; i < power; i++) {
             SmallCreateDto dto = new SmallCreateDto();
-            dto.setUuid(UUID.randomUUID());
+            dto.setId(i);
+            dto.setUuid(UUID.randomUUID().toString());
             dto.setName(dto.getUuid().toString());
             String body = i % 2 == 0 ? get(this.getClass(), "data/eComCommon.xsd") : get(this.getClass(), "data/SharedCommon.xsd");
-            body = body.substring(0, 32672);
             dto.setData(body);
             list.add(dto);
         }

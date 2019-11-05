@@ -20,6 +20,8 @@ build/
 *.iml
 *.ipr
 out/
+gradle/
+lib/
 
 ### NetBeans ###
 /nbproject/private/

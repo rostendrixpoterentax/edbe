@@ -22,7 +22,7 @@ public class SmallEntity {
     @Column(nullable = false)
     private UUID uuid;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 32)
     private String name;
 
     @Column(nullable = false, length = 512000)

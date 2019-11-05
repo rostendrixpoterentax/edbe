@@ -1,4 +1,4 @@
-package ru.kasovsky.edbe.hsql.entity;
+package ru.kasovsky.edbe.sqlite.entity;
 
 import lombok.*;
 
@@ -19,7 +19,7 @@ public class SmallEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(nullable = false, length = 36)
+    @Column(nullable = false)
     private UUID uuid;
 
     @Column(nullable = false, length = 32)

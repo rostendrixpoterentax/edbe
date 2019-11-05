@@ -1,4 +1,4 @@
-package ru.kasovsky.edbe.hsql.entity;
+package ru.kasovsky.edbe.firebird.entity;
 
 import lombok.*;
 
@@ -16,15 +16,15 @@ public class SmallEntity {
 
     @Id
     @Column(nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(nullable = false, length = 36)
-    private UUID uuid;
+    private String uuid;
 
-    @Column(nullable = false, length = 32)
+    @Column(nullable = false, length = 36)
     private String name;
 
-    @Column(nullable = false, length = 512000)
+    @Column(nullable = false, columnDefinition="BLOB SUB_TYPE TEXT")
     private String data;
 }

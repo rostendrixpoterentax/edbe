@@ -19,12 +19,12 @@ public class SmallEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 36)
     private UUID uuid;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 36)
     private String name;
 
-    @Column(nullable = false, length = 512000)
+    @Column(nullable = false, length = 32672)
     private String data;
 }

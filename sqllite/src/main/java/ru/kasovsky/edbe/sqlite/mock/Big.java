@@ -1,8 +1,8 @@
-package ru.kasovsky.edbe.derby.mock;
+package ru.kasovsky.edbe.sqlite.mock;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import ru.kasovsky.edbe.derby.dto.SmallCreateDto;
+import ru.kasovsky.edbe.sqlite.dto.SmallCreateDto;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,7 +38,6 @@ public class Big {
             dto.setUuid(UUID.randomUUID());
             dto.setName(dto.getUuid().toString());
             String body = i % 2 == 0 ? get(this.getClass(), "data/eComCommon.xsd") : get(this.getClass(), "data/SharedCommon.xsd");
-            body = body.substring(0, 32672);
             dto.setData(body);
             list.add(dto);
         }
